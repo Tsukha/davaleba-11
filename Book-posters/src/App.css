@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.5;
+}
+
+.poster-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.book-card {
+  width: 350px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin: 5px auto;
+  padding-bottom: 20px;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  background-color: #e6e6e6;
+  border-radius: 12px;
+}
+
+.title {
+  padding: 16px 20px 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.summary {
+  padding: 0 20px 15px;
+  font-size: 15px;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.characters-list {
+  padding: 0 20px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: left;
+}
+
+.character {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2d3748;
+}
+
+.print-btn {
+  margin: 5px 20px 0;
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.print-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.print-btn:active {
+  background-color: #1e40af;
+  transform: scale(0.98);
+}
+
+/* Missing image placeholder */
+.image:not([src]),
+.image[src=""] {
+  height: 300px;
+  background-color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image:not([src])::after,
+.image[src=""]::after {
+  content: "300 × 400";
+  color: #9ca3af;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .book-card {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .print-btn {
+    width: calc(100% - 40px);
+  }
+}
